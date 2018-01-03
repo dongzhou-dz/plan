@@ -3,12 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router/index'
-// import popwin from './components/plugins/popwin/'
+import popwin from './components/plugins/popwin/'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 // Vue.use(popwin);
-import './../static/reset.css'
-
+//import './../static/reset.css'
+Vue.use(ElementUI);
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

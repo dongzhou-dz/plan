@@ -9,8 +9,8 @@
     <div class="m-title">title</div>
     <div class="m-text01">文字一</div>
     <div class="m-text02">文字二</div>
-    <div class="m-text03">文字三</div>
-    <div class="m-ft"><button @click='btn("aaa",$event)'>click</button></div>
+    <div class="m-text03" :style="[{color: this.aaa == 'aaa'?'#ff0000':''},{width: this.bbb== 'bbb'?'100px':''},{fontSize:this.ccc == 'ccc'?'50px':''}]">文字三</div>
+    <div class="m-ft"><button @click="tab()">tab</button><button @click="list()">list</button><button @click='btn()'>click</button></div>
   </div>
 </template>
 
@@ -27,7 +27,10 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'hello world'
+      msg: 'hello world',
+      aaa: 'aaa',
+      bbb: 'bbb',
+      ccc: 'ccc'
     }
   },
   mounted(){
@@ -40,11 +43,17 @@ export default {
     //console.log(Button)
   },
   methods: {
-    btn(status,$event){
+    btn(){
       //let boxId = 'box'
-      console.log($event);
-      //this.$router.push({path: '/index/box',query: {zhou: '2huo'}})
+      //console.log($event);
+      this.$router.push({path: '/index/box',query: {zhou: '2huo'}})
       //this.$router.push({name: 'Index',params: {boxId},query:{zhou:'2huo'}})
+    },
+    list(){
+      this.$router.push({path: '/list'})
+    },
+    tab(){
+      this.$router.push({path: '/index/'})
     }
   },
   components:{
@@ -92,8 +101,8 @@ export default {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 80px;
-    line-height: 80px;
+    // height: 80px;
+    // line-height: 80px;
     text-align: center;
     button{
       width: 25%;

@@ -3,8 +3,9 @@
       <p>{{title}}</p>
   </div>
 </template>
-<<script>
+<script>
 export default {
+	name: 'list',
   data(){
       return{
           title: 'tab module'
